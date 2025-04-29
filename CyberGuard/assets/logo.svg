@@ -1,0 +1,6 @@
+<svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" role="img">
+  <title>CyberGuard Logo</title>
+  <rect width="64" height="64" rx="12" fill="#2563EB"/>
+  <path d="M32 12L16 20V36C16 48 32 52 32 52C32 52 48 48 48 36V20L32 12Z" fill="#3B82F6"/>
+  <path d="M32 16L24 20V36C24 44 32 48 32 48C32 48 40 44 40 36V20L32 16Z" fill="white"/>
+</svg>
