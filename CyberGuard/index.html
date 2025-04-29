@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CyberGuard - Your Cyber Safety Companion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/app.js" defer></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+  <header class="bg-blue-700 text-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold flex items-center space-x-2">
+        <i class="fas fa-shield-alt text-yellow-400"></i>
+        <span>CyberGuard</span>
+      </h1>
+      <nav>
+        <ul class="flex space-x-6 text-lg">
+          <li><a href="#scam-call-detector" class="hover:underline">☎ Scam Call Detector</a></li>
+          <li><a href="#phishing-link-scanner" class="hover:underline">🌐 Phishing Link Scanner</a></li>
+          <li><a href="#fraud-message-detector" class="hover:underline">✉ Fraud Message Detector</a></li>
+          <li><a href="#fake-profile-checker" class="hover:underline">📷 Fake Profile Checker</a></li>
+          <li><a href="#deepfake-detector" class="hover:underline">📹 Deepfake Detector</a></li>
+          <li><a href="#daily-cyber-safety-tips" class="hover:underline">● Daily Cyber Safety Tips</a></li>
+          <li><a href="#location-scam-alerts" class="hover:underline">📍 Location Scam Alerts</a></li>
+          <li><a href="#user-reporting" class="hover:underline">🗳 User Reporting</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8 flex-grow space-y-16">
+    <!-- Scam Call Detector -->
+    <section id="scam-call-detector" class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+        <i class="fas fa-phone-slash text-red-500"></i>
+        <span>Scam Call Detector</span>
+      </h2>
+      <p class="mb-4">Detect and block scam calls automatically.</p>
+      <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+        <input
+          type="text"
+          id="scamCallNumber"
+          placeholder="Enter phone number"
+          class="border border-gray-300 rounded px-3 py-2 flex-grow focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button
+          id="checkScamCallBtn"
+          class="bg-red-500 text-white rounded px-4 py-2 hover:bg-red-600 transition"
+        >
+          Check Number
+        </button>
+      </div>
+      <div id="scamCallResult" class="mt-4 text-lg font-medium"></div>
+    </section>
+
+    <!-- Phishing Link Scanner -->
+    <section id="phishing-link-scanner" class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+        <i class="fas fa-link text-yellow-500"></i>
+        <span>Phishing Link Scanner</span>
+      </h2>
+      <p class="mb-4">Scan suspicious links to detect phishing attempts.</p>
+      <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+        <input
+          type="url"
+          id="phishingLinkInput"
+          placeholder="Enter URL"
+          class="border border-gray-300 rounded px-3 py-2 flex-grow focus:outline-none focus:ring-2 focus:ring-yellow-500"
+        />
+        <button
+          id="scanPhishingLinkBtn"
+          class="bg-yellow-500 text-white rounded px-4 py-2 hover:bg-yellow-600 transition"
+        >
+          Scan Link
+        </button>
+      </div>
+      <div id="phishingLinkResult" class="mt-4 text-lg font-medium"></div>
+    </section>
+
+    <!-- Fraud Message Detector -->
+    <section id="fraud-message-detector" class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+        <i class="fas fa-envelope-open-text text-green-500"></i>
+        <span>Fraud Message Detector</span>
+      </h2>
+      <p class="mb-4">Detect fraudulent messages and scams.</p>
+      <textarea
+        id="fraudMessageInput"
+        rows="4"
+        placeholder="Paste message text here"
+        class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+      ></textarea>
+      <button
+        id="detectFraudMessageBtn"
+        class="mt-3 bg-green-500 text-white rounded px-4 py-2 hover:bg-green-600 transition"
+      >
+        Detect Fraud
+      </button>
+      <div id="fraudMessageResult" class="mt-4 text-lg font-medium"></div>
+    </section>
+
+    <!-- Fake Profile Checker -->
+    <section id="fake-profile-checker" class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+        <i class="fas fa-user-secret text-purple-500"></i>
+        <span>Fake Profile Checker</span>
+      </h2>
+      <p class="mb-4">Check if a profile is fake based on username or ID.</p>
+      <input
+        type="text"
+        id="fakeProfileInput"
+        placeholder="Enter username or profile ID"
+        class="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+      />
+      <button
+        id="checkFakeProfileBtn"
+        class="mt-3 bg-purple-500 text-white rounded px-4 py-2 hover:bg-purple-600 transition"
+      >
+        Check Profile
+      </button>
+      <div id="fakeProfileResult" class="mt-4 text-lg font-medium"></div>
+    </section>
+
+    <!-- Deepfake Detector -->
+    <section id="deepfake-detector" class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+        <i class="fas fa-video text-pink-500"></i>
+        <span>Deepfake Detector</span>
+      </h2>
+      <p class="mb-4">Upload a video to detect deepfake content.</p>
+      <input
+        type="file"
+        id="deepfakeVideoInput"
+        accept="video/*"
+        class="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-pink-500"
+      />
+      <button
+        id="detectDeepfakeBtn"
+        class="mt-3 bg-pink-500 text-white rounded px-4 py-2 hover:bg-pink-600 transition"
+      >
+        Detect Deepfake
+      </button>
+      <div id="deepfakeResult" class="mt-4 text-lg font-medium"></div>
+    </section>
+
+    <!-- Daily Cyber Safety Tips -->
+    <section id="daily-cyber-safety-tips" class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+        <i class="fas fa-lightbulb text-indigo-500"></i>
+        <span>Daily Cyber Safety Tips</span>
+      </h2>
+      <ul id="cyberSafetyTips" class="list-disc list-inside space-y-2 text-gray-700"></ul>
+    </section>
+
+    <!-- Location Scam Alerts -->
+    <section id="location-scam-alerts" class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+        <i class="fas fa-map-marker-alt text-red-600"></i>
+        <span>Location Scam Alerts</span>
+      </h2>
+      <p class="mb-4">Enable location to receive scam alerts in your area.</p>
+      <button
+        id="enableLocationBtn"
+        class="bg-red-600 text-white rounded px-4 py-2 hover:bg-red-700 transition"
+      >
+        Enable Location Alerts
+      </button>
+      <div id="locationAlertResult" class="mt-4 text-lg font-medium"></div>
+    </section>
+
+    <!-- User Reporting -->
+    <section id="user-reporting" class="bg-white rounded-lg shadow p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center space-x-2">
+        <i class="fas fa-flag text-yellow-700"></i>
+        <span>User Reporting</span>
+      </h2>
+      <form id="userReportForm" class="space-y-4">
+        <div>
+          <label for="reportType" class="block font-medium mb-1">Report Type</label>
+          <select
+            id="reportType"
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            required
+          >
+            <option value="" disabled selected>Select a type</option>
+            <option value="scamCall">Scam Call</option>
+            <option value="phishingLink">Phishing Link</option>
+            <option value="fraudMessage">Fraud Message</option>
+            <option value="fakeProfile">Fake Profile</option>
+            <option value="deepfake">Deepfake</option>
+            <option value="locationScam">Location Scam</option>
+          </select>
+        </div>
+        <div>
+          <label for="reportDetails" class="block font-medium mb-1">Details</label>
+          <textarea
+            id="reportDetails"
+            rows="4"
+            placeholder="Provide details about the issue"
+            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            required
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-yellow-500 text-white rounded px-4 py-2 hover:bg-yellow-600 transition"
+        >
+          Submit Report
+        </button>
+      </form>
+      <div id="userReportResult" class="mt-4 text-lg font-medium"></div>
+    </section>
+  </main>
+
+  <footer class="bg-blue-700 text-white text-center py-4 mt-auto">
+    <p>© 2024 CyberGuard. All rights reserved.</p>
+  </footer>
+</body>
+</html>
